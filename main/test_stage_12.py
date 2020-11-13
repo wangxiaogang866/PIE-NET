@@ -274,7 +274,7 @@ def train():
 
 def eval_one_epoch_stage_1(sess, ops, train_writer):
     is_training = True
-    dataset = ['./test_data/37.mat']
+    dataset = ['./test_data/137.mat']
     for i in range(len(dataset)):
         load_data_start_time = time.time();
         train_data = sio.loadmat(dataset[i])['Training_data']
@@ -434,7 +434,7 @@ def eval_one_epoch_stage_1(sess, ops, train_writer):
 #        pred_simmat_val = (pred_simmat_val<=255)*pred_simmat_val+(pred_simmat_val>255)*255
         temp_name = dataset[i]
         temp_name = dataset[i]
-        temp_name = temp_name[39:]
+        temp_name = temp_name[-7:]
         sio.savemat('./test_result/test_pred_'+temp_name, {'input_point_cloud': input_data, \
                                                     'input_labels_key_p': input_labels_key_p, \
                                                     'input_labels_corner_p': input_labels_corner_p, \
@@ -489,7 +489,7 @@ def eval_one_epoch_stage_2(sess, ops, train_writer):
         log_string('\t%s: step: %f loss: %f duration time %.3f (%.1f examples/sec; %.3f sec/batch)' \
            % (datetime.now(),step,total_loss,process_duration,examples_per_sec,sec_per_batch))
         temp_name = dataset[i]
-        temp_name = temp_name[34:-4]
+        temp_name = temp_name[-7:]
         sio.savemat('test_s_2_pred_'+temp_name, {'pred_dof_score_val': pred_dof_score_val,'all_feat':all_feat})
 
 
