@@ -1,0 +1,11 @@
+Namespace(batch_size=1, decay_rate=0.7, decay_step=200000, gpu=0, learning_rate=0.001, max_epoch=1, model='model', momentum=0.9, num_point=8096, optimizer='adam', stage=1, stage_1_log_dir='stage_1_log', stage_2_log_dir='stage_2_log')
+pid: 4781
+**** TEST EPOCH 000 ****
+	2020-06-10 17:38:15.675578: /media/user_c/disk1/PC2EDGE/TRAIN_DATa/37.mat load time: 0.068276
+	2020-06-10 17:38:28.022699: step: 206848.000000 loss: 23.857463 duration time 12.347 (5.2 examples/sec; 0.193 sec/batch)
+		Training TASK 1 Mean_loss: 5.331305
+		Training TASK 1 Accuracy: 0.286557
+		Training TASK 1 Recall: 0.286557
+		Training TASK 1 Mean_loss: 18.526159
+		Training TASK 1 Accuracy: 0.027442
+		Training TASK 1 Recall: 0.027442
