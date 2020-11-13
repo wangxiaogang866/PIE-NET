@@ -1,0 +1,35 @@
+Namespace(batch_size=1, decay_rate=0.7, decay_step=200000, gpu=0, learning_rate=0.001, max_epoch=1, model='model', momentum=0.9, num_point=8096, optimizer='adam', stage=1, stage_1_log_dir='stage_1_log', stage_2_log_dir='stage_2_log')
+pid: 7951
+**** TEST EPOCH 000 ****
+	2020-06-01 16:55:11.692840: /media/user_c/disk1/PC2EDGE/TRAIN_noi5/1.mat load time: 0.227100
+	2020-06-01 16:55:23.434921: step: 206848.000000 loss: 0.769840 duration time 11.742 (5.5 examples/sec; 0.183 sec/batch)
+		Training TASK 1 Mean_loss: 0.639275
+		Training TASK 1 Accuracy: 0.787932
+		Training TASK 1 Recall: 0.915087
+		Training TASK 1 Mean_loss: 0.130566
+		Training TASK 1 Accuracy: 0.967179
+		Training TASK 1 Recall: 0.993640
+	2020-06-01 16:55:23.842730: /media/user_c/disk1/PC2EDGE/TRAIN_noi5/2.mat load time: 0.227794
+	2020-06-01 16:55:34.798989: step: 206848.000000 loss: 0.732172 duration time 10.956 (5.8 examples/sec; 0.171 sec/batch)
+		Training TASK 1 Mean_loss: 0.620742
+		Training TASK 1 Accuracy: 0.791639
+		Training TASK 1 Recall: 0.925545
+		Training TASK 1 Mean_loss: 0.111430
+		Training TASK 1 Accuracy: 0.971904
+		Training TASK 1 Recall: 0.995850
+	2020-06-01 16:55:35.223518: /media/user_c/disk1/PC2EDGE/TRAIN_noi5/3.mat load time: 0.246672
+	2020-06-01 16:55:46.065195: step: 206848.000000 loss: 0.764158 duration time 10.841 (5.9 examples/sec; 0.169 sec/batch)
+		Training TASK 1 Mean_loss: 0.648021
+		Training TASK 1 Accuracy: 0.781171
+		Training TASK 1 Recall: 0.916526
+		Training TASK 1 Mean_loss: 0.116137
+		Training TASK 1 Accuracy: 0.969819
+		Training TASK 1 Recall: 0.997403
+	2020-06-01 16:55:46.458079: /media/user_c/disk1/PC2EDGE/TRAIN_noi5/4.mat load time: 0.218603
+	2020-06-01 16:55:57.260546: step: 206848.000000 loss: 0.713038 duration time 10.802 (5.9 examples/sec; 0.169 sec/batch)
+		Training TASK 1 Mean_loss: 0.615519
+		Training TASK 1 Accuracy: 0.793469
+		Training TASK 1 Recall: 0.920720
+		Training TASK 1 Mean_loss: 0.097518
+		Training TASK 1 Accuracy: 0.976090
+		Training TASK 1 Recall: 0.995633
