@@ -21,9 +21,6 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
     python train_stage_12.py --stage=1
 
-    to train curve proposal generation module
-
-    python train_stage_2_3.py --stage=1
 
 
 ## Test：
@@ -32,9 +29,6 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
     python test_stage_12.py --stage=1
 
-    to test curve proposal generation module
-
-    python test_stage_2_3.py --stage=1
 	
     
 ## Visualization:
