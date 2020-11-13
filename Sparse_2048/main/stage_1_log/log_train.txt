@@ -1,0 +1,35 @@
+Namespace(batch_size=1, decay_rate=0.7, decay_step=200000, gpu=0, learning_rate=0.001, max_epoch=1, model='model', momentum=0.9, num_point=2048, optimizer='adam', stage=1, stage_1_log_dir='stage_1_log', stage_2_log_dir='stage_2_log')
+pid: 14518
+**** TEST EPOCH 000 ****
+	2020-11-13 14:22:44.385336: /media/user_c/disk1/PC2EDGE/TRAIN_2048/1.mat load time: 0.134286
+	2020-11-13 14:22:47.034750: step: 206848.000000 loss: 0.514860 duration time 2.649 (24.2 examples/sec; 0.041 sec/batch)
+		Training TASK 1 Mean_loss: 0.356303
+		Training TASK 1 Accuracy: 0.878456
+		Training TASK 1 Recall: 0.974587
+		Training TASK 1 Mean_loss: 0.158557
+		Training TASK 1 Accuracy: 0.956078
+		Training TASK 1 Recall: 0.997263
+	2020-11-13 14:22:47.223273: /media/user_c/disk1/PC2EDGE/TRAIN_2048/2.mat load time: 0.134576
+	2020-11-13 14:22:48.999196: step: 206848.000000 loss: 0.477025 duration time 1.776 (36.0 examples/sec; 0.028 sec/batch)
+		Training TASK 1 Mean_loss: 0.336161
+		Training TASK 1 Accuracy: 0.886780
+		Training TASK 1 Recall: 0.976901
+		Training TASK 1 Mean_loss: 0.140864
+		Training TASK 1 Accuracy: 0.962204
+		Training TASK 1 Recall: 0.997068
+	2020-11-13 14:22:49.183290: /media/user_c/disk1/PC2EDGE/TRAIN_2048/3.mat load time: 0.127375
+	2020-11-13 14:22:50.931034: step: 206848.000000 loss: 0.564958 duration time 1.748 (36.6 examples/sec; 0.027 sec/batch)
+		Training TASK 1 Mean_loss: 0.398495
+		Training TASK 1 Accuracy: 0.864349
+		Training TASK 1 Recall: 0.967307
+		Training TASK 1 Mean_loss: 0.166463
+		Training TASK 1 Accuracy: 0.958824
+		Training TASK 1 Recall: 0.988932
+	2020-11-13 14:22:51.110001: /media/user_c/disk1/PC2EDGE/TRAIN_2048/4.mat load time: 0.124443
+	2020-11-13 14:22:52.852505: step: 206848.000000 loss: 0.491493 duration time 1.742 (36.7 examples/sec; 0.027 sec/batch)
+		Training TASK 1 Mean_loss: 0.356723
+		Training TASK 1 Accuracy: 0.875008
+		Training TASK 1 Recall: 0.974047
+		Training TASK 1 Mean_loss: 0.134771
+		Training TASK 1 Accuracy: 0.963005
+		Training TASK 1 Recall: 0.996609
