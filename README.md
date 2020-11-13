@@ -2,6 +2,7 @@
 
 This is the code repository for "PIE-NET: Parametric Inference of Point Cloud Edges”
 
+Created by Xiaogang Wang, Bin Zhou, Yahao Shi, Xiaowu Chen, Qinping Zhao, Kai Xu
 
 ## Prerequisites: 
     Numpy (ver. 1.13.3)
@@ -10,7 +11,7 @@ This is the code repository for "PIE-NET: Parametric Inference of Point Cloud Ed
     Matlab (ver. 2015a) 
     Python (ver. 2.7)
     
-    This repository is based on Tensorflow and the TF operators from PointNet++ and PointNet. Therefore, you need to compile PointNet++ (here) and PointNet (here).
+This repository is based on Tensorflow and the TF operators from PointNet++ and PointNet. Therefore, you need to compile PointNet++ ([here](https://github.com/charlesq34/pointnet2) and PointNet ([here] (https://github.com/charlesq34/pointnet)).
 The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
 
@@ -34,6 +35,7 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
     to test curve proposal generation module
 
     python test_stage_2_3.py --stage=1
+	
     
 ## Visualization:
     visualization.m: This file is used to visualize the detection results.
