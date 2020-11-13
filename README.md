@@ -19,7 +19,7 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
     to train edge and corner points detection module
 
-    python train_stage_1.py --stage=1
+    python train_stage_12.py --stage=1
 
     to train curve proposal generation module
 
@@ -30,7 +30,7 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
     to test edge and corner points detection module
 
-    python test_stage_1.py --stage=1
+    python test_stage_12.py --stage=1
 
     to test curve proposal generation module
 
