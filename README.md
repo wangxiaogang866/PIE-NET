@@ -44,4 +44,32 @@ To evaluate the model, you need to put the test point clouds ('.mat' format) in 
 ## Visualization:
     visualization.m: This file is used to visualize the detection results.
     
+## Comparison with EC-Net
+
+The following is the complete process of generating training samples（EC-NET）using ABC data (see Figure 4 in EC-NET paper):
+
+1, Extract the mesh information from the existing file（see Figure 4 (a)）
+
+   1.1,  Extract all 'vertices', 'faces'  from '.obj' file
+
+1.2, Extract all 'curves' from '.yml' file
+      Fields:  
+       sharp: true;   
+       type: Bspline/line/Cycle;
+       vert_indices: Contains all the vertex indexes that belong to the curve
+   Note that in our work, we only consider sharp curve ('sharp: true'). A non-sharp curve ('sharp: false') provided in the '.yml' file, which is not in our consideration.
+
+1.3, For EC-NET annotated edges （see Figure 4 (b)）
+    'faces': N_f*9;  each facet is represented by three vertices
+    'vertices'：N_v*3; （x,y,z）
+    'curves' : N_c*6;  each 'curve' is made up of a large number of small line segments, each represented by two 'vertices'
+ 
+1.4, point cloud sampling  （see Figure 4 (c)）
+
+   1.4.1，'Dense_sample_points' :  According to 'Vertices' and  'Faces' (based on the area of the triangular face) , 100,000 points are sampled for each model;
+   1.4.2,  'Sparse_sample_points' :  Using the Farthest Point Sampling (FPS) algorithm to sample 8096 points from 100,000 points.
+
+1.5, generate EC-NET training data  （see Figure 4 (d) (e)）
+     
+   Finally, using the above entries ('faces', 'vertices', 'curves', 'Sparse_sample_points') as input, you can generate the training data using the '../code/prepare_data.py' file provided by EC-Net.
 
