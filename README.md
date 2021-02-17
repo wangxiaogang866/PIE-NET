@@ -39,9 +39,9 @@ To evaluate the model, you need to put the test point clouds ('.mat' format) in 
     cd main
     python test_stage_12.py --stage=1
 
-## Train (Stage2)
+## Train_stage2 (./Stage2/main/)
     python train_stage_2.py --stage=1
-## Test (Stage2)
+## Test_stage2 (./Stage2/main/)
     python test_stage_2.py --stage=1
     
 ## Visualization:
