@@ -39,10 +39,14 @@ To evaluate the model, you need to put the test point clouds ('.mat' format) in 
     cd main
     python test_stage_12.py --stage=1
 
-	
+## Train (Stage2)
+    python train_stage_2 --stage=1
+## Test (Stage2)
+    python test_stage_2 --stage=1
     
 ## Visualization:
     visualization.m: This file is used to visualize the detection results.
+    Vis_closed_final.m (./stage2/main/): this file is used for closed curve detection post-precessing
     
 ## Comparison with EC-Net
 
