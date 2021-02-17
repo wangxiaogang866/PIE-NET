@@ -75,6 +75,9 @@ load color
        %%         
         closed_edge_points = input_points(global_closed_edge_idx_unique,:);       
         closed_sample_all = size(closed_edge_points,1);
+        if size(closed_edge_points,1)<20
+            continue;
+        end
         
         num_neibor = 4;
         Weight_matrix = Distance_Points1_Points2_matrix(closed_edge_points, closed_edge_points);        
