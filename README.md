@@ -47,6 +47,7 @@ To evaluate the model, you need to put the test point clouds ('.mat' format) in 
 ## Visualization:
     visualization.m: This file is used to visualize the detection results.
     Vis_closed_final.m (./stage2/main/): this file is used for closed curve detection post-precessing
+    Vis_open_final.m (./stage2/main/): this file is used for open curve detection post-precessing
     
 ## Comparison with EC-Net
 
