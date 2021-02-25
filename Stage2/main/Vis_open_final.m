@@ -91,7 +91,7 @@ num_matrix = 128;
 order_corner_idx_global = [train_all_pair((end-num_matrix+2):end,1); train_all_pair((end-num_matrix+2),2)]; 
 All_corner_points = input_pl(order_corner_idx_global,:);
 
-%1£¨
+%1¬£¬¨
 idx_conflict = intersect(closed_pre_label_ind,order_corner_idx_global);
 
 %2, 
@@ -207,7 +207,7 @@ function fig2_vis(input_points, Closed_label, Open_label)
 end
 
 
-%%  ‰»ÎÕº
+%%
 function fig11_vis(input_points, All_edge_points_idx, corner_idx)
 
         fig11 = figure(11)
@@ -237,7 +237,7 @@ function fig11_vis(input_points, All_edge_points_idx, corner_idx)
 end
 
 
-%%  ‰»ÎÕº
+%%
 function fig1_vis(input_points, edge_pro, corner_idx)
 
         fig1 = figure(1);
@@ -266,39 +266,6 @@ function fig1_vis(input_points, edge_pro, corner_idx)
         hold off
 
 end
-
-% %% ¡¨Õ®Õº
-% function fig2_vis(input_points, train_all_pair, train_all_pair_con)
-%         
-%         train_all_pair_pos_idx = find(train_all_pair_con);
-%         train_all_pair_pos_pair = train_all_pair(train_all_pair_pos_idx,:);
-%         
-%         fig2 = figure(2);
-%         load color
-%         
-%         global_idx_unique = [train_all_pair_pos_pair(:,1); train_all_pair_pos_pair(:,2)];
-%         global_idx_unique = unique(global_idx_unique);
-%         feature_points = input_points(global_idx_unique,:);
-%         temp_points = feature_points;
-%         color_label = find(global_idx_unique);
-%         temp_color = color(color_label,:);  
-%         temp_all = [temp_points,temp_color];
-%         scatter3(temp_all(:,1),temp_all(:,2),temp_all(:,3),50,temp_all(:,4:6),'.');       
-%         hold on
-%                 
-%         axis equal
-%         title('GT Edge and Corner points') %,'color','r'?)  %,'FontSize','12'        
-%         hold on
-%         
-%         num_edge = size(train_all_pair_pos_pair,1);
-%         for i_edge = 1:num_edge
-%             edge_l = input_points(train_all_pair_pos_pair(i_edge,1),:);
-%             edge_r = input_points(train_all_pair_pos_pair(i_edge,2),:);
-%             line([edge_l(1);edge_r(1)],[edge_l(2);edge_r(2)],[edge_l(3);edge_r(3)]);
-%             hold on
-%         end
-%         hold off
-% end 
 
 
 
