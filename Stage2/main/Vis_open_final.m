@@ -208,36 +208,6 @@ end
 
 
 %%
-function fig11_vis(input_points, All_edge_points_idx, corner_idx)
-
-        fig11 = figure(11)
-        load color
- 
-        All_edge_points = input_points(All_edge_points_idx,:);
-
-        temp_color_label = zeros(size(input_points,1),1)+2;
-        All_edge_points_color_idx = temp_color_label(All_edge_points_idx)+1;
-        All_edge_points_color = color(All_edge_points_color_idx,:);     
-        temp_all = [All_edge_points,All_edge_points_color];
-        scatter3(temp_all(:,1),temp_all(:,2),temp_all(:,3),50,temp_all(:,4:6),'.');
-        
-        hold on
-        
-        
-
-        down_sample_point2 = input_points(corner_idx,:);
-        Points_color_sharp_rgb2 = color(corner_idx,:);
-        point_surfaces3 = [down_sample_point2,Points_color_sharp_rgb2]; 
-        
-        scatter3(point_surfaces3(:,1),point_surfaces3(:,2),point_surfaces3(:,3),500,point_surfaces3(:,4:6),'.');
-        axis equal
-        title('Our Edge and Corner points') %,'color','r'?)  %,'FontSize','12'        
-        hold off
-
-end
-
-
-%%
 function fig1_vis(input_points, edge_pro, corner_idx)
 
         fig1 = figure(1);
