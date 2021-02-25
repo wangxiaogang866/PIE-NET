@@ -16,7 +16,7 @@ All_proposals_sample_points = generate_proposal(Input_point_cloud_8096,All_pair_
 [max_res_val_scale_cell,max_res_val_cell,max_res_val_idx_cell,max_res_pro_idx_cell] = Computer_res(Input_point_cloud_8096, All_proposals_sample_points, All_pair_down_sample_idx_cell,open_lin_idx,open_cyc_idx);
 
 path_size = cell2mat(cellfun(@(x) length(unique(x)), max_res_pro_idx_cell,'Unif',0));
-path_size_zero_idx = find(path_size<=4);  %小于3个
+path_size_zero_idx = find(path_size<=4);  
 All_pair_down_sample_idx_cell(path_size_zero_idx) = [];
 All_proposals_sample_points(path_size_zero_idx) = [];
 max_res_val_scale_cell(path_size_zero_idx) = [];
