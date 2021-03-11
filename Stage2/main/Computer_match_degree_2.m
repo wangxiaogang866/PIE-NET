@@ -55,6 +55,50 @@ for i = 1:num_sample_cell_thr_1
     sel_points_cell{i} = temp_points((temp_idx-1)*101+1:temp_idx*101,:);
 end
 
+
+% % test---------------------------
+% load color
+% fig_100 = figure(100);
+% num_pairs = numel(sample_cell_thr_1);
+% %num_curves = cellfun(@(x) size(x,1)/101, All_proposals_sample_points,'Unif',0);
+% 
+% for i = 1:num_pairs
+%     i
+%     temp_proposal_sample_points = sample_cell_thr_1{i};
+%     best_pro_curve_points = temp_proposal_sample_points((1-1)*101+1:1*101,:);
+%     
+%     pro_curve_points_color = color(i+1000,:);  
+%     pro_curve_points_color = repmat(pro_curve_points_color,101,1);
+%     pro_curve_all = [best_pro_curve_points, pro_curve_points_color];
+% %     scatter3(pro_curve_all(:,1),pro_curve_all(:,2),pro_curve_all(:,3),50,pro_curve_all(:,4:6),'.');   
+%     temp_point_color = pro_curve_all([1,end],:);
+%     scatter3(temp_point_color(:,1),temp_point_color(:,2),temp_point_color(:,3),50,temp_point_color(:,4:6),'.');
+%     line(temp_point_color(:,1),temp_point_color(:,2),temp_point_color(:,3));
+%     hold on
+%     
+% %     temp1 = path_cell_thr_1{i};
+% %     temp1(:) = i;
+% %     temp2 = path_cell_thr_1{i};
+% %     Points_color = Input_point_cloud_8096(temp2,:);
+% %     Points_color_label = temp1;
+% %     Points_color_rgb = color(Points_color_label,:);     
+% %     point_color = [Points_color,Points_color_rgb];
+% %     scatter3(point_color(:,1),point_color(:,2),point_color(:,3),50,point_color(:,4:6),'.'); % 画图 
+% %     line(point_color(:,1),point_color(:,2),point_color(:,3));
+%     
+%     pause(0.1)
+%     axis equal
+% end
+% 
+% title('Between corner points path')    
+% hold off
+
+
+
+
+
+
+
 %%
 scores = max_res_val_idx_mat_thr_1;
 boxes = path_cell_thr_1;
@@ -376,17 +420,7 @@ temp_points_corner_2 = temp_points_edge_mask(2,:);
 temp_points_control_1 = temp_points_edge_mask(3,:);
 pos = [temp_points_corner_1;temp_points_control_1;temp_points_corner_2];
 pos1 = unique(pos,'rows'); 
-x_res1 = pos(1,1)-pos(2,1);
-x_res2 = pos(1,1)-pos(3,1);
-y_res1 = pos(1,2)-pos(2,2);
-y_res2 = pos(1,2)-pos(3,2);
-z_res1 = pos(1,3)-pos(2,3);
-z_res2 = pos(1,3)-pos(3,3);
-if (((x_res1<1e-4) && (x_res2<1e-4)) && ((y_res1<1e-4) && (y_res2<1e-4))) || (((x_res1<1e-4) && (x_res2<1e-4)) && ((z_res1<1e-4) && (z_res2<1e-4))) || (((y_res1<1e-4) && (y_res2<1e-4)) && ((z_res1<1e-4) && (z_res2<1e-4)))
-    Points = line_vis(pos(1:2,:),num);
-    return;
-end
-%
+
 if size(pos1,1)==2
    Points = line_vis(pos1,num);
    return;
