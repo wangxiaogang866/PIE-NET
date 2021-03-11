@@ -12,7 +12,7 @@ All_pair_down_sample_idx_cell(path_size_zero_idx) = [];
 % 1,
 All_proposals_sample_points = generate_proposal(Input_point_cloud_8096,All_pair_down_sample_idx_cell);
 
-% 2��
+% 2，
 [max_res_val_scale_cell,max_res_val_cell,max_res_val_idx_cell,max_res_pro_idx_cell] = Computer_res(Input_point_cloud_8096, All_proposals_sample_points, All_pair_down_sample_idx_cell,open_lin_idx,open_cyc_idx);
 
 path_size = cell2mat(cellfun(@(x) length(unique(x)), max_res_pro_idx_cell,'Unif',0));
@@ -54,6 +54,49 @@ for i = 1:num_sample_cell_thr_1
     temp_idx = max_res_val_idx_cell_thr_1{i};
     sel_points_cell{i} = temp_points((temp_idx-1)*101+1:temp_idx*101,:);
 end
+
+
+% % 可视化测试下
+% % test---------------------------
+% load color
+% fig_100 = figure(100);
+% num_pairs = numel(sample_cell_thr_1);
+% %num_curves = cellfun(@(x) size(x,1)/101, All_proposals_sample_points,'Unif',0);
+% 
+% for i = 1:num_pairs
+%     i
+%     temp_proposal_sample_points = sample_cell_thr_1{i};
+%     best_pro_curve_points = temp_proposal_sample_points((1-1)*101+1:1*101,:);
+%     
+%     pro_curve_points_color = color(i+1000,:);  
+%     pro_curve_points_color = repmat(pro_curve_points_color,101,1);
+%     pro_curve_all = [best_pro_curve_points, pro_curve_points_color];
+% %     scatter3(pro_curve_all(:,1),pro_curve_all(:,2),pro_curve_all(:,3),50,pro_curve_all(:,4:6),'.');   
+%     temp_point_color = pro_curve_all([1,end],:);
+%     scatter3(temp_point_color(:,1),temp_point_color(:,2),temp_point_color(:,3),50,temp_point_color(:,4:6),'.');
+%     line(temp_point_color(:,1),temp_point_color(:,2),temp_point_color(:,3));
+%     hold on
+%     
+% %     temp1 = path_cell_thr_1{i};
+% %     temp1(:) = i;
+% %     temp2 = path_cell_thr_1{i};
+% %     Points_color = Input_point_cloud_8096(temp2,:);
+% %     Points_color_label = temp1;
+% %     Points_color_rgb = color(Points_color_label,:);     
+% %     point_color = [Points_color,Points_color_rgb];
+% %     scatter3(point_color(:,1),point_color(:,2),point_color(:,3),50,point_color(:,4:6),'.'); % 画图 
+% %     line(point_color(:,1),point_color(:,2),point_color(:,3));
+%     
+%     pause(0.1)
+%     axis equal
+% end
+% 
+% title('Between corner points path')    
+% hold off
+
+
+
+
 
 
 
@@ -121,7 +164,7 @@ ele_one = all_ele_int(idx_one);
 
 
 
-%3��
+%3，
 num_ele_one = length(ele_one);
 pair_con_re = zeros(num_ele_one,1);
 all_proposals_cell = All_proposals_cell;
@@ -161,7 +204,9 @@ for i = 1:num_ele_one
     [~,target_local_idx] = ismember(all_ele_del,all_pre_label_ind);
     local_idx_neibor = find_path_neibor(source_local_idx,target_local_idx,G);
     one_neibor_idx = all_pre_label_ind(local_idx_neibor);
-    
+    if isempty(one_neibor_idx)
+        continue;
+    end
     
     %3, 
     [idx_row2,idx_col2] = find(All_pair_idx_mat == one_neibor_idx);
