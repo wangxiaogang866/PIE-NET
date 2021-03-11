@@ -70,7 +70,7 @@ filenames=filenames';
     end
     temp_name = filenames{i};
     DST_PATH_t = './test_data_2_1/';
-    save_path = [DST_PATH_t,temp_name,'.mat'];   
+    save_path = [DST_PATH_t,temp_name];   
     save(save_path,'Training_data_stage2');
     
  end
