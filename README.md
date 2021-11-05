@@ -39,6 +39,24 @@ To evaluate the model, you need to put the test point clouds ('.mat' format) in 
     cd main
     python test_stage_12.py --stage=1
 
+## Stage 2 training data generation
+
+The file '/stage2/main/Gen_stage2_train_data_all.m' that can be used to generate training data for Stage2. 
+Taking the data we provided as an example, you only need to test all the training data './ train_data/xxx.mat' with the trained Stage1 network and get the corresponding output './test_result/test_pre_xxx.mat'. 
+Then, the training data for Stage2 (./train_data_2_1/xxx.mat) can be generated using the file 'Gen_stage2_train_data_all.m' .
+
+Note that the generation of the training data for Stage2 depends on the nine ground truth items (corner_points_label, open_gt_pair_idx, open_gt_type, open_gt_res) in './train_data/xxx.mat';
+Therefore, if you are using your own data to generate Stage2 training samples, you will need to provide the following nine data items:
+
+PC_8096_edge_points_label_bin: which points in the point cloud are edge points;
+corner_points_label: which points in the point cloud are corner points;
+open_gt_pair_idx: index of two endpoints of each open curve;
+open_gt_type: Curve type of each open curve (arc/B-spline/line)
+open_gt_res: Residuals between the two endpoints and GT endpoints.
+open_gt_sample_points：64 points were sampled for each GT open curve. (Because there is a slight deviation between the endpoints in the input point cloud and the endpoints of the GT curve.)
+closed_gt_type: Curve type of each closed curve (In this paper, we include only circles)
+closed_gt_sample_points: 64 points were sampled for each GT closed curve.
+
 ## Train_stage2 (./Stage2/main/)
     python train_stage_2.py --stage=1
 ## Test_stage2 (./Stage2/main/)
