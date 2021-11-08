@@ -19,10 +19,9 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
    If you want to generate new training data, here's a full explanation, how to generate a complete Dataset from ABC Dataset:
     
     1, How to filter models from ABC:
-    We used a total of four Chunks. Since we considered only three curve types (Line/Circle/Bspline), all models that contain other types of curves, such as ellipses, are filtered out. At the same time, those models that are too complex are also eliminated (>30,0000 vertices). 
+       We used a total of four Chunks. Since we considered only three curve types (Line/Circle/Bspline), all models that contain other types of curves, such as ellipses, are filtered out. At the same time, those models that are too complex are also eliminated (>30,0000 vertices). 
 
     2, Downsample:
-
        2.1, we sampled 100,000 points densely for each model (based on the area of the triangular face).
        2.2, we use the Farthest Point Sampling (FPS) algorithm to sample 8096 points from 100,000 points.
 
@@ -31,11 +30,11 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
          3.1.1, Extract all 'vertices', 'faces'  from '.obj' file
 
          3.1.2, Extract all 'curves' from '.yml' file
-         Fields:  
-            sharp: true;   
-            type: Bspline/line/Cycle; 
-            vert_indices: Contains all the vertex indexes that belong to the curve. (each Groundtruth curve from ABC Dataset)
-       Note that in our work, we only consider sharp curve ('sharp: true'). A non-sharp curve ('sharp: false') provided in the '.yml' file, which is not in our consideration.
+            Fields:  
+               sharp: true;   
+               type: Bspline/line/Cycle; 
+               vert_indices: Contains all the vertex indexes that belong to the curve. (each Groundtruth curve from ABC Dataset)
+         Note that in our work, we only consider sharp curve ('sharp: true'). A non-sharp curve ('sharp: false') provided in the '.yml' file, which is not in our consideration.
 
          3.1.3, Determine open/closed 
             Through observation, we find that the sharp curve is likely to be a closed curve when the start point and the end point coincide. Similarly, when the start and end     point do not coincide, there is a high probability of an open curve.
