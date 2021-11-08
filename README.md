@@ -38,11 +38,11 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
        Note that in our work, we only consider sharp curve ('sharp: true'). A non-sharp curve ('sharp: false') provided in the '.yml' file, which is not in our consideration.
 
          3.1.3, Determine open/closed 
-         Through observation, we find that the sharp curve is likely to be a closed curve when the start point and the end point coincide. Similarly, when the start and end     point do not coincide, there is a high probability of an open curve.
+            Through observation, we find that the sharp curve is likely to be a closed curve when the start point and the end point coincide. Similarly, when the start and end     point do not coincide, there is a high probability of an open curve.
  
-        This is not absolute. Sometimes a closed curve, such as a circle, is made up of two so-called open curves (two semi-circles). In this case, we will recombine the two open curves to form a completely closed curve.
+            This is not absolute. Sometimes a closed curve, such as a circle, is made up of two so-called open curves (two semi-circles). In this case, we will recombine the two open curves to form a completely closed curve.
 
-        In addition, there are cases where a closed curve consists of multiple open curves. In this case, because it's time consuming to deal with, we also filter out these kinds of models
+            In addition, there are cases where a closed curve consists of multiple open curves. In this case, because it's time consuming to deal with, we also filter out these kinds of models
 
          3.1.4, Original model groundtruth generation:
             Vertices: All the Vertices in the original model
@@ -68,7 +68,7 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
        5.3 sharp curves transfer: Similar to 3.1, 3.2.
            The curve type (Line/Circle/Bspline) is the same.
 
-### For Stage_2:
+    For Stage_2:
 
     PC_8096_edge_points_label_bin: which points in the point cloud are edge points;
     corner_points_label: which points in the point cloud are corner points;
