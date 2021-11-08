@@ -78,9 +78,9 @@ open_gt_type: Curve type of each open curve (arc/B-spline/line)
 open_gt_res: Residuals between the two endpoints and GT endpoints.  (Because there is a slight deviation between the endpoints in the input point cloud and the endpoints of the GT curve.)
 open_gt_sample_points：64 points were sampled for each GT open curve. 
 
-For closed curve:
-closed_gt_type: Curve type of each closed curve (In this paper, we include only circles)
-closed_gt_sample_points: 64 points were sampled for each GT closed curve.
+# For closed curve:
+     closed_gt_type: Curve type of each closed curve (In this paper, we include only circles)
+     closed_gt_sample_points: 64 points were sampled for each GT closed curve.
 
 ## Introduction
 There are seven versions of our approach, including a main version (8096 points Input), and six versions of the stress test, include: Noise (+0.01, +0.02, +0.05) and Sparse (1024, 2048, 4096) .
