@@ -18,7 +18,7 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
    If you want to generate new training data, here's a full explanation, how to generate a complete Dataset from ABC Dataset:
     
-## 1, How to filter models from ABC:
+    1, How to filter models from ABC:
     We used a total of four Chunks. Since we considered only three curve types (Line/Circle/Bspline), all models that contain other types of curves, such as ellipses, are filtered out. At the same time, those models that are too complex are also eliminated (>30,0000 vertices). 
 
 ## 2, Downsample:
