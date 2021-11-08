@@ -32,24 +32,24 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
        1.2, Extract all 'curves' from '.yml' file
        Fields:  
-         sharp: true;   
-         type: Bspline/line/Cycle; 
-         vert_indices: Contains all the vertex indexes that belong to the curve. (each Groundtruth curve from ABC Dataset)
+          sharp: true;   
+          type: Bspline/line/Cycle; 
+          vert_indices: Contains all the vertex indexes that belong to the curve. (each Groundtruth curve from ABC Dataset)
        Note that in our work, we only consider sharp curve ('sharp: true'). A non-sharp curve ('sharp: false') provided in the '.yml' file, which is not in our consideration.
 
        1.3, Determine open/closed curve
-         Through observation, we find that the sharp curve is likely to be a closed curve when the start point and the end point coincide. Similarly, when the start and end    point do not coincide, there is a high probability of an open curve.
+         Through observation, we find that the sharp curve is likely to be a closed curve when the start point and the end point coincide. Similarly, when the start and end     point do not coincide, there is a high probability of an open curve.
  
         This is not absolute. Sometimes a closed curve, such as a circle, is made up of two so-called open curves (two semi-circles). In this case, we will recombine the two open curves to form a completely closed curve.
 
         In addition, there are cases where a closed curve consists of multiple open curves. In this case, because it's time consuming to deal with, we also filter out these kinds of models
 
     1.4, Original model groundtruth generation:
-     Vertices: All the Vertices in the original model
-     Faces: All the Faces in the original model
-     All_sharp_curves_cell: Which vertices belong to the same curve, and each curve is open or closed curve. All of these vertices, which we call 'edge points'. If a curve is an open curve, its start and end points are called 'corner points'.
-     Edge_points_ori:  Contains all of the Edge points.
-     Corner_points_ori:  Contains all the corner points
+         Vertices: All the Vertices in the original model
+         Faces: All the Faces in the original model
+         All_sharp_curves_cell: Which vertices belong to the same curve, and each curve is open or closed curve. All of these vertices, which we call 'edge points'. If a curve is an open curve, its start and end points are called 'corner points'.
+         Edge_points_ori:  Contains all of the Edge points.
+         Corner_points_ori:  Contains all the corner points
 
     2, Downsample
        2.1, Dense_sample_points:  Based on the area of the triangular face, 100,000 points are sampled for each model;
@@ -57,16 +57,16 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 
     3, Annotation transfer
 
-   3.1 edge points transfer:   
-     Edge_points_now ('PC_8096_edge_points_label_bin'): For each edge points (Edge_points_ori) in the original model, find a nearest neighbor from the 8096 sampling points (Sparse_sample_points).
-     Edge_points_residual_vector ('PC_8096_edge_points_norm'):  The residual vector between these two points (Edge_points_now, Edge_points_ori).
+       3.1 edge points transfer:   
+           Edge_points_now ('PC_8096_edge_points_label_bin'): For each edge points (Edge_points_ori) in the original model, find a nearest neighbor from the 8096 sampling points (Sparse_sample_points).
+           Edge_points_residual_vector ('PC_8096_edge_points_norm'):  The residual vector between these two points (Edge_points_now, Edge_points_ori).
 
-   3.2 corner points transfer: 
-     Corner_point_now ('corner_points_label'): For each corner point (Corner_points_ori) in the original model, find a nearest neighbor from the 8096 sampling points (Sparse_sample_points).
-     Corner_point_residual_vector: The residual vector between these two points (Corner_point_now，Corner_points_ori).
+       3.2 corner points transfer: 
+           Corner_point_now ('corner_points_label'): For each corner point (Corner_points_ori) in the original model, find a nearest neighbor from the 8096 sampling points (Sparse_sample_points).
+           Corner_point_residual_vector: The residual vector between these two points (Corner_point_now，Corner_points_ori).
 
-   3.3 sharp curves transfer: Similar to 3.1, 3.2.
-      The curve type (Line/Circle/Bspline) is the same.
+       3.3 sharp curves transfer: Similar to 3.1, 3.2.
+           The curve type (Line/Circle/Bspline) is the same.
 
 ### For Stage_2:
 
