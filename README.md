@@ -67,18 +67,20 @@ At the same time, those models that are too complex are also eliminated (>30,000
    3.3 sharp curves transfer: Similar to 3.1, 3.2.
       The curve type (Line/Circle/Bspline) is the same.
 
-For Stage_2:
+### For Stage_2:
 
-PC_8096_edge_points_label_bin: which points in the point cloud are edge points;
-corner_points_label: which points in the point cloud are corner points;
+    PC_8096_edge_points_label_bin: which points in the point cloud are edge points;
+    corner_points_label: which points in the point cloud are corner points;
 
 For each grountruth curve (1.2, vert_indices) from ABC, if it is open curve, then:
-open_gt_pair_idx: index of two endpoints of each open curve; （For the two endpoints of GT curve, find a nearest neighbor among 8096 sampling points, and its index is used as the index of the open curve）
-open_gt_type: Curve type of each open curve (arc/B-spline/line) 
-open_gt_res: Residuals between the two endpoints and GT endpoints.  (Because there is a slight deviation between the endpoints in the input point cloud and the endpoints of the GT curve.)
-open_gt_sample_points：64 points were sampled for each GT open curve. 
 
-### For closed curve:
+     open_gt_pair_idx: index of two endpoints of each open curve; （For the two endpoints of GT curve, find a nearest neighbor among 8096 sampling points, and its index is used as the index of the open curve）
+    open_gt_type: Curve type of each open curve (arc/B-spline/line) 
+    open_gt_res: Residuals between the two endpoints and GT endpoints.  (Because there is a slight deviation between the endpoints in the input point cloud and the endpoints of the GT curve.)
+    open_gt_sample_points：64 points were sampled for each GT open curve. 
+
+For closed curve:
+
      closed_gt_type: Curve type of each closed curve (In this paper, we include only circles)
      closed_gt_sample_points: 64 points were sampled for each GT closed curve.
 
