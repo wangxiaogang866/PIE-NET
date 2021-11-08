@@ -76,9 +76,9 @@ The code is tested under TensorFlow 1.4.1 and Python 2.7 on Ubuntu 16.04.
 For each grountruth curve (1.2, vert_indices) from ABC, if it is open curve, then:
 
      open_gt_pair_idx: index of two endpoints of each open curve; （For the two endpoints of GT curve, find a nearest neighbor among 8096 sampling points, and its index is used as the index of the open curve）
-    open_gt_type: Curve type of each open curve (arc/B-spline/line) 
-    open_gt_res: Residuals between the two endpoints and GT endpoints.  (Because there is a slight deviation between the endpoints in the input point cloud and the endpoints of the GT curve.)
-    open_gt_sample_points：64 points were sampled for each GT open curve. 
+     open_gt_type: Curve type of each open curve (arc/B-spline/line) 
+     open_gt_res: Residuals between the two endpoints and GT endpoints.  (Because there is a slight deviation between the endpoints in the input point cloud and the endpoints of the GT curve.)
+     open_gt_sample_points：64 points were sampled for each GT open curve. 
 
 For closed curve:
 
